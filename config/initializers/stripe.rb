@@ -1,6 +1,6 @@
 Rails.configuration.stripe = {
-  :_publishable_key => Rails.application.credentials.stripe.fetch(:publishable_key),
-  :_secret_key => Rails.application.credentials.stripe.fetch(:secret_key)
+  :publishable_key => Rails.application.credentials.stripe.fetch(:p_key),
+  :secret_key => Rails.application.credentials.stripe.fetch(:s_key)
 }
 
-Stipe.api_key = Rails.configuration.stripe[:_secret_key]
+Stripe.api_key = Rails.configuration.stripe[:secret_key]
