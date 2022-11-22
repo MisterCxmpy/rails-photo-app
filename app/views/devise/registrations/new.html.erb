@@ -1,6 +1,10 @@
+<script language="Javascript">
+  Stripe.setPublishableKey("<%= Rails.application.credentials.stripe.fetch(:p_key) %>")
+</script>
+
 <h1><%= t('.sign_up') %></h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) html: { role: "form", class: "cc_form" } do |f| %>
   <%= bootstrap_devise_error_messages! %>
 
   <div class="form-group">
